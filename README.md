@@ -2,15 +2,17 @@
 
 Shared base repo for all smaller components for all teams. See below for component too large that they have their own repos.
 
+All custom components should be added in [Confluence](https://confluence.adeo.no/display/PTC/Dokumentasjon+av+egenutviklede+komponenter) as well.
+
 # This Repo
 
 ## Lightning Web Components
 
--   Nothing
+-   Nothing to see here
 
 ## Frameworks
 
--   Nothing
+-   Nothing to see here
 
 # Other Repos
 
