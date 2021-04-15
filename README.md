@@ -4,7 +4,7 @@ Find all shared components (LWC) and frameworks
 
 ## Lightning Web Components
 
-- [crm-shared-activity-timeline](https://github.com/navikt/crm-shared-activity-timeline) (WIP)
+- [crm-shared-activity-timeline](https://github.com/navikt/crm-shared-activity-timeline)
   - Component to view any related record on a parent record, by putting the LWC on the parent flexipage
   - Modular with custom metadata
 
