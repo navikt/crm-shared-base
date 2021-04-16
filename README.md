@@ -18,7 +18,7 @@ All custom components should be added in [Confluence](https://confluence.adeo.no
 
 ## Lightning Web Components
 
--   [crm-shared-object-timeline](https://github.com/navikt/crm-shared-object-timeline)
+-   [crm-shared-timeline](https://github.com/navikt/crm-shared-timeline)
     -   Component to view any related record on a parent record, by putting the LWC on the parent flexipage
     -   Modular with custom metadata
 
