@@ -12,9 +12,6 @@ public with sharing class FlexiPageNotificationController {
 
         if (hasSObjectField(field, so)) {
             String query = 'SELECT ' + field + ' FROM ' + sObjectType + ' WHERE Id = \'' + recordId + '\'' + ' LIMIT 1';
-            System.debug(
-                '(String) Database.query( query )[0].get( field );: ' + (String) Database.query(query)[0].get(field)
-            );
 
             return (String) Database.query(query)[0].get(field);
         }
