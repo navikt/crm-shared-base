@@ -2,21 +2,32 @@
     <div if:true={message} class={mainCss} role="alert">
         <span class="slds-assistive-text">error</span>
 
-        <!-- ICON -->
-        <lightning-icon
-            class="slds-icon_container slds-icon-utility-error slds-var-m-right_x-small"
-            variant="inverse"
-            icon-name={icon}
-            alternative-text="Error"
-            title="Error"
-            size="small"
-        >
-        </lightning-icon>
-
-        <!-- TITLE -->
-        <h2 if:true={title} class={titleCss}>{title}</h2>
-
-        <!-- TEXT -->
-        <h2 class="slds-text-body_regular">{message}</h2>
+        <lightning-layout multiple-rows={titleOnTop}>
+            <lightning-layout-item size={titleSize} padding="around-small">
+                <!-- ICON + TITLE -->
+                <lightning-layout horizontal-align="center" vertical-align="center">
+                    <lightning-layout-item>
+                        <!-- ICON -->
+                        <lightning-icon
+                            class="slds-icon_container slds-icon-utility-error"
+                            variant="inverse"
+                            icon-name={icon}
+                            alternative-text="Error"
+                            title="Error"
+                            size="small"
+                        >
+                        </lightning-icon>
+                    </lightning-layout-item>
+                    <lightning-layout-item>
+                        <!-- TITLE -->
+                        <h2 if:true={title} class={titleCss}>{title}</h2>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <!-- FIELD TEXT -->
+            <lightning-layout-item size={titleSize} padding="around-small">
+                <h2 class="slds-text-body_regular slds-text-align_left slds-p-top_xxx-small">{message}</h2>
+            </lightning-layout-item>
+        </lightning-layout>
     </div>
 </template>
