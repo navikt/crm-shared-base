@@ -8,7 +8,13 @@ All custom components should be added in [Confluence](https://confluence.adeo.no
 
 ## Lightning Web Components
 
--   Nothing to see here
+-   [Markdown Parser](force-app/components/markdownParser)
+    -   Convert SObject Fields from Markdown to HTML
+-   [Static Notification](force-app/components/staticNotification)
+    -   Show a simple, static notification from a SOBject Field
+    -   Customizable using Lightning Page Editor
+
+![](img/staticNotification.png)
 
 ## Frameworks
 
