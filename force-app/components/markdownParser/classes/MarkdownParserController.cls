@@ -7,7 +7,10 @@ public with sharing class MarkdownParserController {
 
         String query = 'SELECT ' + fieldName + ' FROM ' + objectApiName + ' WHERE Id = : recordId LIMIT 1';
         List<SObject> results = Database.query(query);
-        System.debug('(String) results[0].get( fieldName ): ' + (String) results[0].get(fieldName));
+
+        if (results.size() == 0) {
+            return null;
+        }
 
         return (String) results[0].get(fieldName);
     }
