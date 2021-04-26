@@ -4,8 +4,7 @@
             "path": "force-app",
             "default": true,
             "package": "crm-shared-base",
-            "versionName": "ver 0.1",
-            "versionNumber": "0.2.0.NEXT"
+            "versionNumber": "1.0.0.NEXT"
         }
     ],
     "namespace": "",
