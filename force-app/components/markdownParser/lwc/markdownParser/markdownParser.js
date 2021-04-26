@@ -1,40 +1,44 @@
 import { LightningElement, api, track, wire } from 'lwc';
 import { loadScript } from 'lightning/platformResourceLoader';
 import markedJs from '@salesforce/resourceUrl/markdownParser';
-import getData from '@salesforce/apex/MarkdownParserController.getData';
+import { getRecord } from 'lightning/uiRecordApi';
 
 export default class MarkdownParser extends LightningElement {
     isRendered = false;
 
     @api recordId;
     @api objectApiName;
+
     @api fieldName;
+    @track fields = [];
+
+    @api icon;
+    @api title;
 
     @track empty = false;
 
     @track body;
 
-    renderedCallback() {
-        console.log(this.objectApiName);
-        if (this.isRendered) {
-            return;
-        }
-
-        this.isRendered = true;
-
-        loadScript(this, markedJs).then(() => {
-            this.renderMarkdown();
-        });
+    connectedCallback() {
+        this.fields = [this.objectApiName + '.' + this.fieldName];
     }
 
-    @wire(getData, {
-        recordId: '$recordId',
-        objectApiName: '$objectApiName',
-        fieldName: '$fieldName'
-    })
-    deWire(result) {
-        this.body = result.data;
-        this.renderMarkdown();
+    renderedCallback() {
+        if (!this.isRendered) {
+            this.isRendered = true;
+
+            loadScript(this, markedJs).then(() => {
+                this.renderMarkdown();
+            });
+        }
+    }
+
+    @wire(getRecord, { recordId: '$recordId', optionalFields: '$fields' })
+    wiredRecord({ error, data }) {
+        if (data) {
+            this.body = data.fields[this.fieldName].value;
+            this.renderMarkdown();
+        }
     }
 
     renderMarkdown() {
