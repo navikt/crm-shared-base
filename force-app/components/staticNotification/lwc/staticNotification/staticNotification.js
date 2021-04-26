@@ -31,7 +31,7 @@ export default class staticNotification extends LightningElement {
         this.fields = [this.objectApiName + '.' + this.field];
     }
 
-    @wire(getRecord, { recordId: '$recordId', fields: '$fields' })
+    @wire(getRecord, { recordId: '$recordId', optionalFields: '$fields' })
     wiredRecord({ error, data }) {
         if (data) {
             this.message = data.fields[this.field].value;
