@@ -1,7 +1,7 @@
 import { LightningElement, api, wire, track } from 'lwc';
 import { getRecord } from 'lightning/uiRecordApi';
 
-export default class FlexiPageNotification extends LightningElement {
+export default class staticNotification extends LightningElement {
     @api recordId;
     @api objectApiName;
     @track fields = [];
