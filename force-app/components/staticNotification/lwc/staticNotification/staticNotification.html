@@ -26,7 +26,9 @@
             </lightning-layout-item>
             <!-- FIELD TEXT -->
             <lightning-layout-item size={titleSize} padding="around-small">
-                <h2 class="slds-text-body_regular slds-text-align_left slds-p-top_xxx-small">{message}</h2>
+                <h2 class="slds-text-body_regular slds-text-align_left slds-p-top_xxx-small">
+                    <lightning-formatted-rich-text value={message}></lightning-formatted-rich-text>
+                </h2>
             </lightning-layout-item>
         </lightning-layout>
     </div>
